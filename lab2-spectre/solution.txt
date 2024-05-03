@@ -1,0 +1,34 @@
+Part 1
+Discussion 1:
+256 addresses are needed to be flushed, which is the size of the NUM_PAGES.
+
+Discussion 2:
+The attack won't work if the victim has no access to the shared memory. One possible solution is to use prime+proble to monitor the usage of whole cache set.
+
+
+Part 2
+Discussion 3:
+By leveraging speculative execution, the attacker accesses a secret value stored in the victim's address space.
+To leak this value, the attacker influences the CPU to perform a speculative read based on the secret, and stores this in a memory location accessible to the attacker.
+The attacker then measures access times to determine which memory regions were speculatively loaded into the cache and infer the secret.
+
+Discussion 4:
+The fewest number of times in my lab is about 15.
+
+
+Part 3
+Discussion 5:
+1. Clfush the current_offset to make sure it's not in the cache.
+2. Clfush the address of ascii of U, N, C, {, in case they cause a cache hit.
+2. Add dummy operations to get a 0 and call it in the function call_kernel_part3() to make the speculation window longer.
+3. Run it many times and init a score[] to store the values of cache hits. Get the biggest number, and this is the index.
+
+Discussion 6:
+I think we need to know the CPU, cache architecture, as well as the branch prediction Behavior. The type and configuration of branch predictors are important to understand how to manipulate them for successful speculative execution. 
+The information can be experimentally determined by running diagnostic tools, analyzing timing differences, and exploring kernel module interactions.
+
+
+
+
+
+

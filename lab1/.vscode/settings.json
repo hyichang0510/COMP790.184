@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "string.h": "c",
+        "mman.h": "c",
+        "utility.h": "c",
+        "stdint.h": "c",
+        "stdlib.h": "c",
+        "chrono": "c",
+        "cmath": "c",
+        "functional": "c",
+        "random": "c",
+        "*.tcc": "c",
+        "type_traits": "c"
+    }
+}
